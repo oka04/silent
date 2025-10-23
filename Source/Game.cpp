@@ -147,6 +147,10 @@ bool Game::ChangeScene()
 		m_pNowScene = new SceneGameover(m_pEngine);
 		break;
 
+	case SCENE_LOBBY:
+		m_pNowScene = new SceneGameover(m_pEngine);
+		break;
+
 	case SCENE_EXIT:
 		return false;
 	}

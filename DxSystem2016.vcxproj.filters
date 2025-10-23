@@ -130,11 +130,20 @@
     <Filter Include="Object\SoundManager">
       <UniqueIdentifier>{9ea7f407-e8d5-497f-9567-42d51a629e61}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Object\ServerManager">
-      <UniqueIdentifier>{bf9447f0-c966-433d-986c-fd50a4c219e7}</UniqueIdentifier>
+    <Filter Include="Object\Network">
+      <UniqueIdentifier>{fe45e25d-9bf8-494e-a492-18b10ebfaf95}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Object\ClientManager">
-      <UniqueIdentifier>{a65e7b6a-ce01-4014-a51e-8374c52c7d0c}</UniqueIdentifier>
+    <Filter Include="Object\Network\ClientManager">
+      <UniqueIdentifier>{965e9193-b632-4799-bf6d-f235862b08ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Network\Discovery">
+      <UniqueIdentifier>{e4719443-1760-40cb-a354-47d378934f04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Network\ServerManager">
+      <UniqueIdentifier>{dca1dda9-b948-4ca7-8a0b-f1ac17bdef58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\SceneLobby">
+      <UniqueIdentifier>{73455a64-313a-4789-8c6d-f91846b499cc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -345,11 +354,17 @@
     <ClCompile Include="Wwise\AK\AkFileLocationBase.cpp">
       <Filter>Object\SoundManager</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Object\ServerManager\ServerManager.cpp">
-      <Filter>Object\ServerManager</Filter>
+    <ClCompile Include="Source\Object\Network\ClientManager\ClientManager.cpp">
+      <Filter>Object\Network\ClientManager</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Object\ClientManager\ClientManager.cpp">
-      <Filter>Object\ClientManager</Filter>
+    <ClCompile Include="Source\Object\Network\Discovery\Discovery.cpp">
+      <Filter>Object\Network\Discovery</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Network\ServerManager\ServerManager.cpp">
+      <Filter>Object\Network\ServerManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\SceneLobby\SceneLobby.cpp">
+      <Filter>Scene\SceneLobby</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -482,9 +497,6 @@
     <ClInclude Include="Source\System\Engine\Exception\DxSystemException.h">
       <Filter>System\Engine\Exception</Filter>
     </ClInclude>
-    <ClInclude Include="Source\GameData.h">
-      <Filter>GameBase</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Scene\SceneInit\SceneInit.h">
       <Filter>Scene\SceneInit</Filter>
     </ClInclude>
@@ -587,11 +599,20 @@
     <ClInclude Include="Wwise\AK\AkFileLocationBase.h">
       <Filter>Object\SoundManager</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Object\ServerManager\ServerManager.h">
-      <Filter>Object\ServerManager</Filter>
+    <ClInclude Include="Source\GameData.h">
+      <Filter>GameBase</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Object\ClientManager\ClientManager.h">
-      <Filter>Object\ClientManager</Filter>
+    <ClInclude Include="Source\Object\Network\ClientManager\ClientManager.h">
+      <Filter>Object\Network\ClientManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Network\Discovery\Discovery.h">
+      <Filter>Object\Network\Discovery</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Network\ServerManager\ServerManager.h">
+      <Filter>Object\Network\ServerManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scene\SceneLobby\SceneLobby.h">
+      <Filter>Scene\SceneLobby</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

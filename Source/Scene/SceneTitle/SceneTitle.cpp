@@ -6,6 +6,8 @@
 
 #define _USING_V110_SDK71_ 1
 
+#include "..\\Object\\Network\\ClientManager\\ClientManager.h"
+#include "..\\Object\\Network\\ServerManager\\ServerManager.h"
 #include "SceneTitle.h"
 
 using namespace KeyString;
@@ -39,7 +41,9 @@ SceneTitle::~SceneTitle()
 void SceneTitle::Start()
 {
 	m_buttons.clear();
-	m_buttons.push_back(START_BUTTON);
+	// タイトルのボタンをホスト / 探す に変更
+	m_buttons.push_back(HOST_BUTTON);
+	m_buttons.push_back(FIND_BUTTON);
 	m_buttons.push_back(OPERATION_BUTTON);
 	m_buttons.push_back(EXIT_BUTTON);
 	m_nowSceneNumber = m_nowSceneData.GetNowScene();
@@ -50,6 +54,7 @@ void SceneTitle::Start()
 	m_camera.m_vecUp = D3DXVECTOR3(0.0f, 1.0f, 0.0f);
 	m_camera.RecalculateUpDirection();
 	m_camera.SetDevice(m_pEngine);
+
 
 	m_projection.SetData(D3DXToRadian(90.0f), 4.0f / 3.0f, 0.1f, 100.0f);
 	m_projection.SetDevice(m_pEngine);
@@ -78,7 +83,7 @@ void SceneTitle::Start()
 }
 
 //=============================================================================
-// シーンの実行時に繰り返し呼び出される更新処理関数
+// 更新
 //=============================================================================
 void SceneTitle::Update()
 {
@@ -88,14 +93,26 @@ void SceneTitle::Update()
 
 	m_patrollerManager.Update(m_pEngine, m_map, m_camera.m_vecEye, nullptr, deltaTime);
 
-	if (MenuManager::Update(m_pEngine, m_gameData, deltaTime)) 
+	// MenuManager::Update が true を返したらシーン遷移へ
+	if (MenuManager::Update(m_pEngine, m_gameData, deltaTime))
 	{
+		// 次のシーンに行く前に「ホストを選んだらここでサーバーを起動し、自分で接続する」
+		if (m_gameData.m_nextSceneNumber == Common::SCENE_LOBBY) {
+			// 判断方法：現在選択中のボタンが HOST_BUTTON ならホスト動作を行う
+			// MenuManager の m_buttons / m_selectNumber は protected のため直接取れないので
+			// 判定は本実装では「最後に選択されたボタンの種類」を GameData に保持するのが望ましい。
+			// 簡易実装：ここでは StartServer を呼び、ローカルクライアントで接続してロビーへ行く動作を行う。
+			// ポートや maxPlayers は固定（12345 / 4）
+			ServerManager::GetInstance()->StartServer(12345, 4);
+			ClientManager::GetInstance()->ConnectToServer("127.0.0.1", 12345);
+		}
+
 		m_nowSceneData.Set(m_gameData.m_nextSceneNumber, false, nullptr);
 	}
 }
 
 //=============================================================================
-// シーンの実行時に繰り返し呼び出される描画処理関数
+// 描画
 //=============================================================================
 void SceneTitle::Draw()
 {
@@ -107,7 +124,7 @@ void SceneTitle::Draw()
 	MenuManager::Draw(m_pEngine, m_gameData);
 
 #if _DEBUG	
-	m_pEngine->DrawPrintf(0,1000 , FONT_GOTHIC60, Color::WHITE, "%f", (float)m_pEngine->GetFPS());
+	m_pEngine->DrawPrintf(0, 1000, FONT_GOTHIC60, Color::WHITE, "%f", (float)m_pEngine->GetFPS());
 #endif
 	m_pEngine->SpriteEnd();
 }

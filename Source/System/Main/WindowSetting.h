@@ -21,7 +21,7 @@
 namespace WindowSetting
 {
 	//ウィンドウモード（falseでフルスクリーンモード）
-	const bool MODE_WINDOW = false;
+	const bool MODE_WINDOW = true;
 
 	//ウィンドウのサイズ（CapsViewerで使える解像度を確認すること）
 	const int WINDOW_WIDTH = 1920;

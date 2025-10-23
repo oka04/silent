@@ -158,16 +158,17 @@
   <ItemGroup>
     <ClCompile Include="Source\Game.cpp" />
     <ClCompile Include="Source\Object\CharacterBase\CharacterBase.cpp" />
-    <ClCompile Include="Source\Object\ClientManager\ClientManager.cpp" />
     <ClCompile Include="Source\Object\Fade\Fade.cpp" />
     <ClCompile Include="Source\Object\GoalEffect\GoalEffect.cpp" />
     <ClCompile Include="Source\Object\IntVector2\IntVector2.cpp" />
     <ClCompile Include="Source\Object\Map\Map.cpp" />
     <ClCompile Include="Source\Object\MenuManager\MenuManager.cpp" />
+    <ClCompile Include="Source\Object\Network\ClientManager\ClientManager.cpp" />
+    <ClCompile Include="Source\Object\Network\Discovery\Discovery.cpp" />
+    <ClCompile Include="Source\Object\Network\ServerManager\ServerManager.cpp" />
     <ClCompile Include="Source\Object\Patroller\Patroller.cpp" />
     <ClCompile Include="Source\Object\Patroller\PatrollerManager.cpp" />
     <ClCompile Include="Source\Object\Player\Player.cpp" />
-    <ClCompile Include="Source\Object\ServerManager\ServerManager.cpp" />
     <ClCompile Include="Source\Object\SoundManager\SoundManager.cpp" />
     <ClCompile Include="Source\Object\_ObjectSource\ObjectSource.cpp" />
     <ClCompile Include="Source\Object\_ParticleSource\ParticleSource.cpp" />
@@ -175,6 +176,7 @@
     <ClCompile Include="Source\Scene\SceneGameover\SceneGameover.cpp" />
     <ClCompile Include="Source\Scene\SceneGame\SceneGame.cpp" />
     <ClCompile Include="Source\Scene\SceneInit\SceneInit.cpp" />
+    <ClCompile Include="Source\Scene\SceneLobby\SceneLobby.cpp" />
     <ClCompile Include="Source\Scene\ScenePause\ScenePause.cpp" />
     <ClCompile Include="Source\Scene\SceneTitle\SceneTitle.cpp" />
     <ClCompile Include="Source\Scene\Scene\Scene.cpp" />
@@ -234,17 +236,18 @@
     <ClInclude Include="Source\GameBase.h" />
     <ClInclude Include="Source\GameData.h" />
     <ClInclude Include="Source\Object\CharacterBase\CharacterBase.h" />
-    <ClInclude Include="Source\Object\ClientManager\ClientManager.h" />
     <ClInclude Include="Source\Object\Fade\Fade.h" />
     <ClInclude Include="Source\Object\GoalEffect\GoalEffect.h" />
     <ClInclude Include="Source\Object\IntVector2\IntVector2.h" />
     <ClInclude Include="Source\Object\Map\Map.h" />
     <ClInclude Include="Source\Object\MenuManager\MenuManager.h" />
+    <ClInclude Include="Source\Object\Network\ClientManager\ClientManager.h" />
+    <ClInclude Include="Source\Object\Network\Discovery\Discovery.h" />
+    <ClInclude Include="Source\Object\Network\ServerManager\ServerManager.h" />
     <ClInclude Include="Source\Object\Patroller\Patroller.h" />
     <ClInclude Include="Source\Object\Patroller\PatrollerFileData.h" />
     <ClInclude Include="Source\Object\Patroller\PatrollerManager.h" />
     <ClInclude Include="Source\Object\Player\Player.h" />
-    <ClInclude Include="Source\Object\ServerManager\ServerManager.h" />
     <ClInclude Include="Source\Object\SoundManager\SoundManager.h" />
     <ClInclude Include="Source\Object\_ObjectSource\ObjectSource.h" />
     <ClInclude Include="Source\Object\_ParticleSource\ParticleSource.h" />
@@ -252,6 +255,7 @@
     <ClInclude Include="Source\Scene\SceneGameover\SceneGameover.h" />
     <ClInclude Include="Source\Scene\SceneGame\SceneGame.h" />
     <ClInclude Include="Source\Scene\SceneInit\SceneInit.h" />
+    <ClInclude Include="Source\Scene\SceneLobby\SceneLobby.h" />
     <ClInclude Include="Source\Scene\ScenePause\ScenePause.h" />
     <ClInclude Include="Source\Scene\SceneTitle\SceneTitle.h" />
     <ClInclude Include="Source\Scene\Scene\Scene.h" />

@@ -65,7 +65,7 @@ bool MenuManager::Update(Engine * pEngine, Common::CommonData& gameData, const f
 		UpdateMenuKey(pEngine, gameData);
 		UpdateMenuCursor(pEngine, gameData);
 	}
-	else 
+	else
 	{
 		UpdateOperation(pEngine);
 	}
@@ -140,7 +140,7 @@ void MenuManager::Draw(Engine * pEngine, Common::CommonData & gameData)
 	if (m_bShowOperation)
 	{
 		SetRect(&sour, 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
-		pEngine->Blt(&sour, TEXTURE_OPERATION, &sour); 
+		pEngine->Blt(&sour, TEXTURE_OPERATION, &sour);
 
 		SetRect(&sour, 0, 0, f_buttonSize.x, f_buttonSize.y);
 		SetRect(&dest, f_operationButtonPosition.x, f_operationButtonPosition.y, f_operationButtonPosition.x + f_buttonSize.x, f_operationButtonPosition.y + f_buttonSize.y);
@@ -352,11 +352,19 @@ void MenuManager::UpdateAlpha()
 	m_buttonAlpha += m_changeAlpha;
 
 }
-
+// ボタン押下処理（HOST/FIND 追加対応）
 void MenuManager::Pressed(Common::CommonData& gameData)
 {
 	switch (m_buttons[m_selectNumber])
 	{
+	case HOST_BUTTON:
+		// タイトル → ロビーへ遷移。Scene 側で実際に Server/Client を起動する想定
+		gameData.m_nextSceneNumber = Common::SCENE_LOBBY;
+		break;
+	case FIND_BUTTON:
+		// Find（サーバーを探す）→ ロビー（ブラウザ）へ遷移
+		gameData.m_nextSceneNumber = Common::SCENE_LOBBY;
+		break;
 	case BACK_BUTTON:
 		m_bQuickChangeScene = true;
 	case START_BUTTON:

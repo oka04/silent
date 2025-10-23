@@ -18,7 +18,9 @@ protected:
 	enum BUTTON_KIND
 	{
 		START_BUTTON,
-		BACK_BUTTON, 
+		HOST_BUTTON,       
+		FIND_BUTTON,       
+		BACK_BUTTON,
 		TITLE_BUTTON,
 		RESTART_BUTTON,
 		OPERATION_BUTTON,
@@ -37,7 +39,7 @@ private:
 	void UpdateAlpha();
 	void Pressed(Common::CommonData& gameData);
 
-	enum KEY_FLAG 
+	enum KEY_FLAG
 	{
 		UP_KEY = 1 << 0,
 		DOWN_KEY = 1 << 1,
@@ -57,7 +59,7 @@ private:
 	std::string f_clearText;
 	std::string f_gameOverText;
 	std::string f_pauseText;
-	
+
 	IntVector2 f_timeTextPosition;
 	IntVector2 f_timeValuePosition;
 	IntVector2 f_alertTextPosition;
@@ -69,7 +71,7 @@ private:
 	IntVector2 f_operationButtonPosition;
 	IntVector2 f_buttonSize;
 	std::vector<std::string> f_buttonTexts;
-	
+
 	int m_selectNumber;
 	float m_changeAlpha;
 	float m_buttonAlpha;

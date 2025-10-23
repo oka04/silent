@@ -28,6 +28,7 @@ namespace Common
 		SCENE_PAUSE,
 		SCENE_CLEAR,
 		SCENE_GAMEOVER,
+		SCENE_LOBBY,
 		SCENE_EXIT,
 		RESTART,
 	};
