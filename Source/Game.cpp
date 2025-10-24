@@ -148,7 +148,7 @@ bool Game::ChangeScene()
 		break;
 
 	case SCENE_LOBBY:
-		m_pNowScene = new SceneGameover(m_pEngine);
+		m_pNowScene = new SceneLobby(m_pEngine);
 		break;
 
 	case SCENE_EXIT:

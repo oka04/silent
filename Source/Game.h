@@ -27,6 +27,7 @@
 #include "Scene\\ScenePause\\ScenePause.h"
 #include "Scene\\SceneClear\\SceneClear.h"
 #include "Scene\\SceneGameover\\SceneGameover.h"
+#include "Scene\\SceneLobby\\SceneLobby.h"
 
 class Engine;
 

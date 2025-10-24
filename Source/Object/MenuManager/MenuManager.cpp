@@ -195,8 +195,24 @@ void MenuManager::LoadParameter()
 
 	for (int i = 0; i < MAX_BUTTON; i++)
 	{
-		f_buttonTexts.push_back(config["buttonTexts"][i]);
+		std::string utf8Text = config["buttonTexts"][i];  
+		std::string sjisText = ConvertUTF8ToSJIS(utf8Text); 
+		f_buttonTexts.push_back(sjisText);
 	}
+}
+
+//UTF-8 → Shift-JIS　に変換して日本語対応できるようにする
+std::string MenuManager::ConvertUTF8ToSJIS(const std::string& utf8)
+{
+	int wsize = MultiByteToWideChar(CP_UTF8, 0, utf8.c_str(), -1, nullptr, 0);
+	std::wstring wstr(wsize, 0);
+	MultiByteToWideChar(CP_UTF8, 0, utf8.c_str(), -1, &wstr[0], wsize);
+
+	int size = WideCharToMultiByte(932, 0, wstr.c_str(), -1, nullptr, 0, nullptr, nullptr);
+	std::string sjis(size, 0);
+	WideCharToMultiByte(932, 0, wstr.c_str(), -1, &sjis[0], size, nullptr, nullptr);
+
+	return sjis;
 }
 
 void MenuManager::UpdateKeyFlag(Engine * pEngine)
@@ -359,10 +375,12 @@ void MenuManager::Pressed(Common::CommonData& gameData)
 	{
 	case HOST_BUTTON:
 		// タイトル → ロビーへ遷移。Scene 側で実際に Server/Client を起動する想定
+		m_bQuickChangeScene = true;
 		gameData.m_nextSceneNumber = Common::SCENE_LOBBY;
 		break;
 	case FIND_BUTTON:
 		// Find（サーバーを探す）→ ロビー（ブラウザ）へ遷移
+		m_bQuickChangeScene = true;
 		gameData.m_nextSceneNumber = Common::SCENE_LOBBY;
 		break;
 	case BACK_BUTTON:

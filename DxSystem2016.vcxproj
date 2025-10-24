@@ -97,7 +97,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>Wwise\Win32_vc140\Debug\lib;enetlib\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>AkSoundEngine.lib;AkStreamMgr.lib;AkMemoryMgr.lib;AkMusicEngine.lib;CommunicationCentral.lib;Ws2_32.lib;enetlib.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>

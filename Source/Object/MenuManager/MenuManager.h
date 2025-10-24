@@ -31,6 +31,7 @@ protected:
 	std::vector<int> m_buttons;
 	int m_nowSceneNumber;
 private:
+	std::string MenuManager::ConvertUTF8ToSJIS(const std::string& utf8);
 	void LoadParameter();
 	void UpdateKeyFlag(Engine * pEngine);
 	void UpdateMenuKey(Engine * pEngine, Common::CommonData& gameData);
