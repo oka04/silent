@@ -14,7 +14,10 @@
 //
 //*****************************************************************************
 
+#define WIN32_LEAN_AND_MEAN
 #define _USING_V110_SDK71_ 1
+#include <winsock2.h>
+#include <ws2tcpip.h>
 
 //デバッグ用(メモリリーク検出)
 #define _CRTDBG_MAP_ALLOC

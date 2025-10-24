@@ -3,15 +3,14 @@
 // シーンの元となるヘッダファイル
 //
 //*****************************************************************************
-
 #pragma once
 
-#include "..\\..\\GameBase.h"
-
-#include "..\\Scene\\Scene.h"
-#include "..\\..\\Object\\MenuManager\\MenuManager.h"
 #include "..\\..\\Object\\Network\\ClientManager\\ClientManager.h"
 #include "..\\..\\Object\\Network\\ServerManager\\ServerManager.h"
+
+#include "..\\..\\GameBase.h"
+#include "..\\..\\Object\\MenuManager\\MenuManager.h"
+#include "..\\Scene\\Scene.h"
 #include <vector>
 #include <string>
 

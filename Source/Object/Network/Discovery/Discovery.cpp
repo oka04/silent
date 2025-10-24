@@ -1,4 +1,5 @@
-﻿#include "Discovery.h"
+﻿#define WIN32_LEAN_AND_MEAN
+#define _CRT_SECURE_NO_WARNINGS
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #include <thread>
@@ -8,6 +9,7 @@
 #include <cstring>
 #include <algorithm> // for std::min
 #include <cstddef>
+#include "Discovery.h"
 
 #pragma comment(lib, "ws2_32.lib")
 

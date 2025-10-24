@@ -3,7 +3,8 @@
 // シーンの元となるcppファイル
 //
 //*****************************************************************************
-
+#define WIN32_LEAN_AND_MEAN
+#define _CRT_SECURE_NO_WARNINGS
 #define _USING_V110_SDK71_ 1
 
 #include <winsock2.h>

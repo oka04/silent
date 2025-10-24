@@ -13,7 +13,6 @@
 //*****************************************************************************
 
 #pragma once
-
 #include "GameBase.h"
 
 //-----------------------------------------------------------------------------
@@ -21,13 +20,13 @@
 //-----------------------------------------------------------------------------
 
 #include "Scene\\Scene\Scene.h"
+#include "Scene\\SceneLobby\\SceneLobby.h"
 #include "Scene\\SceneInit\\SceneInit.h"
 #include "Scene\\SceneTitle\\SceneTitle.h"
 #include "Scene\\SceneGame\\SceneGame.h"
 #include "Scene\\ScenePause\\ScenePause.h"
 #include "Scene\\SceneClear\\SceneClear.h"
 #include "Scene\\SceneGameover\\SceneGameover.h"
-#include "Scene\\SceneLobby\\SceneLobby.h"
 
 class Engine;
 

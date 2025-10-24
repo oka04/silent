@@ -1,10 +1,10 @@
 ﻿#pragma once
+#include "..\\Discovery\\Discovery.h"
 #include <enet/enet.h>
 #include <vector>
 #include <memory>
 #include <string>
 #include <mutex>
-#include "..\\Discovery\\Discovery.h"
 
 struct ServerInfoNet
 {
